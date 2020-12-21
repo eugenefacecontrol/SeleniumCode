@@ -25,62 +25,6 @@ namespace SeleniumCode
         }
     }
 
-//    public class GenerateThreeTabs
-//    {
-//        By ALocator = By.XPath("//a[@class=\"w3-button w3-bar-item topnav-icons fa fa-home\"]");
-//        By ILocator = By.XPath("(//i[@class=\"fa\"])[6]");
-//        By ImgLocator = By.XPath("//img[@alt=\"w3schools.com_official's profile picture\"]");
-//
-//        private IWebDriver driver;
-//
-//        public GenerateThreeTabs(IWebDriver driver)
-//        {
-//            this.driver = driver;
-//        }
-//
-//        public GenerateThreeTabs ClickA()
-//        {
-//            driver.FindElement(ALocator).Click();
-//            return this;
-//        }
-//
-//        public GenerateThreeTabs SwitchToWindow(string url, string title)
-//        {
-//            foreach (var handle in driver.WindowHandles)
-//            {
-//                driver.SwitchTo().Window(handle);
-//                if (driver.Url == url && driver.Title == title)
-//                {
-//                    break;
-//                }
-//            }
-//            return this;
-//        }
-
-//        public GenerateThreeTabs ClickI()
-//        {
-//            driver.FindElement(ILocator).Click();
-//            return this;
-//        }
-//
-//        public GenerateThreeTabs ClickImg()
-//        {
-//            driver.FindElement(ImgLocator).Click();
-//            return this;
-//        }
-//
-//        public static GenerateThreeTabs Execute(IWebDriver driver)
-//        {
-//            return new GenerateThreeTabs(driver)
-//                    .ClickA()
-//                    .SwitchToWindow("https://www.w3schools.com/", "W3Schools Online Web Tutorials")
-//                    .ClickI()
-//                    .SwitchToWindow("https://www.instagram.com/w3schools.com_official/", "W3schools.com 🌎 OFFICIAL (@w3schools.com_official) • Instagram photos and videos")
-//                    .ClickImg()
-//                ;
-//        }
-//    }
-
     class Program
     {
         static void Main(string[] args)
