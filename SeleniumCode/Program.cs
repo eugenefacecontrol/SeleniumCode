@@ -9,9 +9,9 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace SeleniumCode
 {
-    public class TestCase
+    public class W3SchooldsTestCase
     {
-        public TestCase(IWebDriver driver)
+        public W3SchooldsTestCase(IWebDriver driver)
         {
             PageFactory.InitElements(driver, this);
         }
@@ -22,6 +22,40 @@ namespace SeleniumCode
         public void Execute()
         {
             A.Click();
+        }
+    }
+
+    public class OnlinerTestCase
+    {
+        By SpanLocator = By.XPath("(//span[@class=\"project-navigation__sign\"])[1]");
+        By DivSamsungGalaxyM31Locator = By.XPath("(//div[@class=\"schema-product__title\"])[1]");
+
+        private IWebDriver driver;
+
+        public OnlinerTestCase(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
+
+        public OnlinerTestCase ClickSpan()
+        {
+            driver.FindElement(SpanLocator).Click();
+            return this;
+        }
+
+        public OnlinerTestCase GetTextDivSamsungGalaxyM31(out string getText)
+        {
+            getText = driver.FindElement(DivSamsungGalaxyM31Locator).Text;
+            return this;
+        }
+
+        public OnlinerTestCase Execute()
+        {
+            return new OnlinerTestCase(driver)
+                    .ClickSpan()
+                    .GetTextDivSamsungGalaxyM31(out string getText3)
+                ;
+            
         }
     }
 
@@ -40,7 +74,9 @@ namespace SeleniumCode
                 webDriver.Navigate()
                     .GoToUrl("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_iframe_src");
 
-                new TestCase(webDriver).Execute();
+                new W3SchooldsTestCase(webDriver).Execute();
+
+                new OnlinerTestCase(webDriver).Execute();
             }
             catch (Exception e)
             {
